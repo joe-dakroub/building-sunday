@@ -1,0 +1,25 @@
+title: "Sunday..."
+description: "A development journal. Building a new kind of personal computer."
+baseurl: "/building-sunday"
+url: "https://joe-dakroub.github.io"
+
+permalink: /:year/:month/:day/:title/
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: "highlight"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - scripts/
+  - README.md
+  - Gemfile
+  - Gemfile.lock

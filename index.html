@@ -1,0 +1,21 @@
+---
+layout: default
+---
+{% if site.posts.size == 0 %}
+  <p class="empty-state">First entry coming soon.</p>
+{% else %}
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li class="post-list-item">
+        <p class="post-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>{% if post.week %} &middot; Week {{ post.week }}{% endif %}
+        </p>
+        <h2 class="post-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+        <a class="post-read" href="{{ post.url | relative_url }}">Read &rarr;</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
